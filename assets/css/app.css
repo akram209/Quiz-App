@@ -16,7 +16,7 @@ body{
 }
 #bar-container{
     width: 400px;
-    height: 10px;
+    height: 5px;
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
     border: 1px solid black;
@@ -24,11 +24,11 @@ body{
     margin-top: 10px;
 }
 #bar{
-    width: 10%;
-    height: 10px;
+    width: 0;
+    height: 5px;
     background-color: rgb(20, 141, 20);
     border-radius: 20px; 
-    
+    transition: width .22s;   
 }   
 #image{
     display: flex;
