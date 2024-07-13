@@ -75,5 +75,28 @@ img{
     font-weight: bold;
     border-radius:3px ;
     cursor: pointer;
+    transition-duration: 300ms;
+}
+#next:hover{
+    background-color: rgb(19, 174, 19);
+    padding-right: 50px;
+}
+
+#previous{
+    margin-top: 40px;
+    margin-left: 20px;
+    padding: 0px 30px ;
+    height: 40px;
+    background-color: rgb(20, 141, 20);
+    color: aliceblue;
+    font-weight: bold;
+    border-radius:3px ;
+    cursor: pointer;
+    display: none;
+    transition-duration: 300ms;
+}
+#previous:hover{
+    background-color: rgb(19, 174, 19);
+    padding-right: 50px;
 }
 
