@@ -43,45 +43,60 @@ var quizObject = {
         }
     ]
 }
-// function swapQuestion(questionindex) {
-//   for (var i = 0; i <quizObject.questions.length ;i++){
-//     if(document.getElementById('question-content')==quizObject.questions[i].question){
-//         questionindex=i;
-//     }
-//     return questionindex+1;
-//   }
+var questionindex=0;
+var width = 0;
+document.getElementById('question-content').innerHTML = quizObject.questions[questionindex].question;
+document.getElementById('counter').innerHTML = (questionindex+1) + "/" + quizObject.questions.length;
 
+function nextQuestion() {
+
+    questionindex++;
+}
+
+function previousQuestion() {
+    questionindex--;
+}
+
+// document.getElementById('next').onclick = function() {
+//     nextQuestion();
+//     document.getElementById('question-content').innerHTML = quizObject.questions[questionindex].question;
+//     swapAnswer(questionindex);
+//     width=0;
+
+// }
 
 
 // var firstQuestion = quizObject.questions[0].question;
 
 // var firstQuestionAnswer = quizObject.questions[0].answers[0].text;
-function swapanswer(index) {
+function swapAnswer(index) {
  
     for (var i=0; i<4; i++){
         document.getElementById('answer'+(i+1)).innerHTML = quizObject.questions[index].answers[i].text;
     }
 }
-var questionindex=0;
-document.getElementById('question-content').innerHTML = quizObject.questions[questionindex].question;
+
 for (var i=0; i<4; i++){
     document.getElementById('answer'+(i+1)).innerHTML = quizObject.questions[questionindex].answers[i].text;
 }
 function startLoading() {
     let loadingBar = document.getElementById('bar');
 
-    var width = 0;
+     width = 0;
+
+ 
     let interval = setInterval(function() {
 
         if (width >= 100) {
             clearInterval(interval);
             questionindex++;
-            if(questionindex>0){
-                document.getElementById('previous').style.display = "inline";
-            }
+            // if you want to show the previous button
+            // if(questionindex>0){
+            //     document.getElementById('previous').style.display = "inline";
+            // }
             if(!questionindex<=quizObject.questions.length){
                 document.getElementById('question-content').innerHTML = quizObject.questions[questionindex].question;
-                swapanswer(questionindex);
+                swapAnswer(questionindex);
                 startLoading();
             }
            
@@ -92,6 +107,7 @@ function startLoading() {
     }, 130); // Adjust the interval duration as needed
 }
 
+// startLoading();
 
 
 
@@ -112,7 +128,6 @@ function startLoading() {
 //     }
 
 // }
-startLoading();
 
 
 // document.getElementById('question-content').innerHTML = quizObject.questions[0].question;
