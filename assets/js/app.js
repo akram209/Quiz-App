@@ -127,7 +127,7 @@ for (let j = 0; j < radios.length; j++) {
    
     radios[j].onclick = function() {
         resetStyle();
-      document.getElementById('answer'+(j+1)).style.backgroundColor = 'green';
+      document.getElementById('answer'+(j+1)).style.backgroundColor = 'lightgreen';
     }
 }
 
@@ -163,12 +163,19 @@ function resetStyle()
     }
   
 }
-function styleAnswer() {
 
-}
 function displayEndMessage() {
     var contentDiv = document.getElementsByClassName('content')[0];
     contentDiv.innerHTML = '';
+    var scoreMessage = document.createElement('p');
+    scoreMessage.setAttribute('id', 'score');
+    scoreMessage.innerHTML = 'Your score is ' + counter + ' out of ' + quizObject.questions.length;
+    var reviewbtn = document.createElement('btn');
+    reviewbtn.setAttribute('id', 'reviewbtn');
+    reviewbtn.innerHTML = 'Review';
+    
+    contentDiv.appendChild(scoreMessage);
+    contentDiv.appendChild(reviewbtn);
 }
 function checkAnswer() {
     var radios = document.getElementsByClassName('answer');
@@ -180,10 +187,10 @@ function checkAnswer() {
                 
             }
         }
-        // else {
-        //     var wrongAnswers =[];
-        //     wrongAnswers.push(quizObject.questions[questionindex].answers[i].text);
-        // }
+        else {
+            var wrongAnswers =[];
+            wrongAnswers.push(quizObject.questions[questionindex].answers[i].text);
+        }
     }
    resetAnswers();
    resetStyle();
