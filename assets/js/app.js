@@ -9,7 +9,8 @@ var quizObject = {
                 { text: "Yellow" },
                 { text: "Red" }
             ],
-            correctAnswer: "Blue"
+            correctAnswer: "Blue",
+            indexOfCorrectAnswer:0
         },
         {
             question: "What is the color of the grass?",
@@ -19,7 +20,8 @@ var quizObject = {
                 { text: "Yellow" },
                 { text: "Red" }
             ],
-            correctAnswer: "Green"
+            correctAnswer: "Green",
+            indexOfCorrectAnswer:0
         },
         {
             question: "What is the color of the sun?",
@@ -29,7 +31,8 @@ var quizObject = {
                 { text: "Yellow" },
                 { text: "Red" }
             ],
-            correctAnswer: "Yellow"
+            correctAnswer: "Yellow",
+            indexOfCorrectAnswer:2
         },
         {
             question: "What is the color of the water?",
@@ -39,14 +42,18 @@ var quizObject = {
                 { text: "Yellow" },
                 { text: "Red" }
             ],
-            correctAnswer: "Blue"
+            correctAnswer: "Blue",
+            indexOfCorrectAnswer:0
+
         }
     ]
 }
 var questionindex=0;
 var width = 0;
+var counter=0;
 document.getElementById('question-content').innerHTML = quizObject.questions[questionindex].question;
 document.getElementById('counter').innerHTML = (questionindex+1) + "/" + quizObject.questions.length;
+
 
 function nextQuestion() {
 
@@ -56,14 +63,43 @@ function nextQuestion() {
 function previousQuestion() {
     questionindex--;
 }
+function resetAnswers() {
+    var radios = document.getElementsByClassName('answer');
+    for (var i = 0, length = radios.length; i < length; i++) {
+        radios[i].checked = false;
+    }
+    
+}
+function checkAnswer() {
+    var radios = document.getElementsByClassName('answer');
+    for (var i = 0;  i <radios.length; i++) {
+        if (radios[i].checked) {
+            if (i=== quizObject.questions[questionindex].indexOfCorrectAnswer) {
+                counter++;
+                
+            }
+        }
+        // else {
+        //     var wrongAnswers =[];
+        //     wrongAnswers.push(quizObject.questions[questionindex].answers[i].text);
+        // }
+    }
+   resetAnswers();
+   if (questionindex == quizObject.questions.length-1) {
+  alert("Your score is " + counter + " out of " + (questionindex+1));
+   }
+    
+}
 
-// document.getElementById('next').onclick = function() {
-//     nextQuestion();
-//     document.getElementById('question-content').innerHTML = quizObject.questions[questionindex].question;
-//     swapAnswer(questionindex);
-//     width=0;
+document.getElementById('next').onclick = function() {
+    checkAnswer();
+    nextQuestion();
+    document.getElementById('question-content').innerHTML = quizObject.questions[questionindex].question;
+    swapAnswer(questionindex);
+    width=0;
 
-// }
+}
+
 
 
 // var firstQuestion = quizObject.questions[0].question;
@@ -89,25 +125,32 @@ function startLoading() {
 
         if (width >= 100) {
             clearInterval(interval);
+            checkAnswer();
             questionindex++;
             // if you want to show the previous button
             // if(questionindex>0){
             //     document.getElementById('previous').style.display = "inline";
             // }
-            if(!questionindex<=quizObject.questions.length){
+            if(!questionindex<quizObject.questions.length){
                 document.getElementById('question-content').innerHTML = quizObject.questions[questionindex].question;
                 swapAnswer(questionindex);
                 startLoading();
+            }
+            if (questionindex == quizObject.questions.length) {
+                
+                alert("Your score is " + counter + " out of " + (questionindex));
             }
            
         } else {
             width++;
             loadingBar.style.width = width + '%';
         }
+        document.getElementById('counter').innerHTML = (questionindex+1) + "/" + quizObject.questions.length;
+
     }, 130); // Adjust the interval duration as needed
 }
 
-// startLoading();
+startLoading();
 
 
 
