@@ -45,19 +45,103 @@ var quizObject = {
             correctAnswer: "Blue",
             indexOfCorrectAnswer:0
 
+        },
+        {
+            question: "What is the color of the blood?",
+            answers: [
+                { text: "Blue" },
+                { text: "Green" },
+                { text: "Yellow" },
+                { text: "Red" }
+            ],
+            correctAnswer: "Red",
+            indexOfCorrectAnswer:3
+        },
+        {
+            question : "what is biggest country in the world?",
+            answers : [
+                { text: "Russia" },
+                { text: "China" },
+                { text: "India" },
+                { text: "USA" }
+            ],
+            correctAnswer : "China",
+            indexOfCorrectAnswer :1
+        },
+        {
+            question : "what is smallest country in the world?",
+            answers : [
+                { text: "Russia" },
+                { text: "China" },
+                { text: "India" },
+                { text: "Vatican City" }
+            ],
+            correctAnswer : "Vatican City",
+            indexOfCorrectAnswer :3
+        },
+        {
+            question : "what is largest continent in the world?",
+            answers : [
+                { text: "North America" },
+                { text: "South America" },
+                { text: "Asia" },
+                { text: "Africa" }
+            ],
+            correctAnswer : "Asia",
+            indexOfCorrectAnswer :2
+        },
+        {
+            question :"what is the tallest building in the world?",
+            answers : [
+                { text: "Burj Khalifa" },
+                { text: "Eiffel Tower" },
+                { text: "Shanghai Tower" },
+                { text: "Empire State Building" }
+            ],
+            correctAnswer : "Burj Khalifa",
+            indexOfCorrectAnswer :0
+        },
+        {
+            question :"what is the biggest city in the world?",
+            answers : [
+                { text: "New York" },
+                { text: "Paris" },
+                { text: "Tokyo" },
+                { text: "London" }
+            ],
+            correctAnswer : "New York",
+            indexOfCorrectAnswer :0
         }
+       
+
     ]
 }
-var questionindex=0;
-var width = 0;
-var counter=0;
-document.getElementById('question-content').innerHTML = quizObject.questions[questionindex].question;
-document.getElementById('counter').innerHTML = (questionindex+1) + "/" + quizObject.questions.length;
+var questionindex=0; // to keep track of the question index
+var width = 0; // to keep track of the progress
+var counter=0; // to keep track of the score
+document.getElementById('question-content').innerHTML = quizObject.questions[questionindex].question; // set first question
+document.getElementById('counter').innerHTML = (questionindex+1) + "/" + quizObject.questions.length; // set counter
+// styling for the choosen option
+var radios = document.getElementsByClassName('answer'); 
+for (let j = 0; j < radios.length; j++) {
+   
+    radios[j].onclick = function() {
+        resetStyle();
+      document.getElementById('answer'+(j+1)).style.backgroundColor = 'green';
+    }
+}
+
+
 
 
 function nextQuestion() {
 
-    questionindex++;
+   
+    if(questionindex==quizObject.questions.length-1){
+        return true;
+    }
+    else{ questionindex++;
+        }
 }
 
 function previousQuestion() {
@@ -67,13 +151,30 @@ function resetAnswers() {
     var radios = document.getElementsByClassName('answer');
     for (var i = 0, length = radios.length; i < length; i++) {
         radios[i].checked = false;
+        document.getElementById('answer'+1).style.backgroundColor = 'rgb(224, 223, 223)';
     }
     
+}
+function resetStyle()
+{
+    var radios = document.getElementsByClassName('answer');
+    for (var j=0; j < radios.length; j++) {
+        document.getElementById('answer'+(j+1)).style.backgroundColor = 'lightgray';
+    }
+  
+}
+function styleAnswer() {
+
+}
+function displayEndMessage() {
+    var contentDiv = document.getElementsByClassName('content')[0];
+    contentDiv.innerHTML = '';
 }
 function checkAnswer() {
     var radios = document.getElementsByClassName('answer');
     for (var i = 0;  i <radios.length; i++) {
         if (radios[i].checked) {
+            
             if (i=== quizObject.questions[questionindex].indexOfCorrectAnswer) {
                 counter++;
                 
@@ -85,11 +186,15 @@ function checkAnswer() {
         // }
     }
    resetAnswers();
+   resetStyle();
    if (questionindex == quizObject.questions.length-1) {
-  alert("Your score is " + counter + " out of " + (questionindex+1));
-   }
+       displayEndMessage();
+    }
     
 }
+
+
+
 
 document.getElementById('next').onclick = function() {
     checkAnswer();
@@ -100,11 +205,6 @@ document.getElementById('next').onclick = function() {
 
 }
 
-
-
-// var firstQuestion = quizObject.questions[0].question;
-
-// var firstQuestionAnswer = quizObject.questions[0].answers[0].text;
 function swapAnswer(index) {
  
     for (var i=0; i<4; i++){
@@ -126,11 +226,9 @@ function startLoading() {
         if (width >= 100) {
             clearInterval(interval);
             checkAnswer();
+            
             questionindex++;
-            // if you want to show the previous button
-            // if(questionindex>0){
-            //     document.getElementById('previous').style.display = "inline";
-            // }
+          
             if(!questionindex<quizObject.questions.length){
                 document.getElementById('question-content').innerHTML = quizObject.questions[questionindex].question;
                 swapAnswer(questionindex);
@@ -154,6 +252,8 @@ startLoading();
 
 
 
+
+
 /* this doesn't work as expected because while loop is working synchronously  */
 // function startLoading(){
 //     var loadingBar = document.getElementById('bar');
@@ -173,4 +273,3 @@ startLoading();
 // }
 
 
-// document.getElementById('question-content').innerHTML = quizObject.questions[0].question;
