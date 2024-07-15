@@ -98,7 +98,7 @@ document.getElementById('confirmPasswordError').innerHTML = "";
     var confirmPassword = document.forms['myForm']['submit'];
     confirmPassword.style.display = "none";
     var loginBtn = document.createElement('button');
-    loginBtn.textContent = "Login";
+    loginBtn.textContent = "ٍStart Quiz";
     loginBtn.id = "loginBtn";
     document.getElementById('myForm').appendChild(loginBtn);
     loginBtn.onclick = function(event) {
