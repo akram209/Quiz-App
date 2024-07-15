@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="assets/css/register.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    
+  
+    <form id="myForm" method="post" action="login.html"  onsubmit="return validateForm()">
+        <h2>Register Here</h2>
+        
+        <div id ="nameDiv">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+            <p id="nameError"></p>
+
+        </div>
+      <div id ="emailDiv">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" placeholder="Enter your email">
+        <p id="emailError"></p>
+      </div>
+     <div id="passwordDiv">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+        <i id="passwordIcon" class="fa-regular fa-eye"></i>
+        <p id="passwordError"></p>
+     </div>
+        <div id="confirmPasswordDiv">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Enter your password again">
+            <i id="confirmPasswordIcon" class="fa-regular fa-eye"></i>
+            <p id="confirmPasswordError"></p>
+        </div>
+     
+      
+       <input type="submit" value="Submit">
+    </form>
+    <script src="assets/js/form.js">
+
+    </script>
+    
+</body>
+</html>
