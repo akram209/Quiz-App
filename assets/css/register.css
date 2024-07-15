@@ -48,7 +48,7 @@ label{
     display: inline-block;
 }
 input[type="submit"]{
-    margin-top: 30px;
+    margin-top: 20px;
     width: 25%;
 }
 input[type="submit"]:hover{
@@ -108,4 +108,19 @@ img{
     border: 1px 0px 0px 0px solid rgb(255, 248, 248);
     border-radius:10px ;
 }
-
+#nameDiv, #confirmPasswordDiv {
+    transition: padding 1s, opacity 1s;
+    
+}
+#loginBtn{
+    
+    width: 25%;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, .6);
+    transition: all 300ms;
+}
+#loginBtn:hover{
+    background-color: rgb(255, 252, 252);
+    color: black;
+    cursor: pointer;
+}

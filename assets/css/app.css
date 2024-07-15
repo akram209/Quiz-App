@@ -1,7 +1,7 @@
 body{
-    background-image: url(../images/back.jpg);
-    background-repeat: no-repeat;
+    background: linear-gradient(to bottom, rgb(0 218 184), rgb(5, 142, 121) , rgb(30, 30, 30));
     background-size: cover;
+background-attachment: fixed;    
 }
 #questionsCounter{
     display: contents;
@@ -13,10 +13,10 @@ body{
     margin-bottom:15px ;
     margin-top: 15px;
     font-size: 15px;
-    background-color: rgb(181, 248, 181);
+    background-color: rgb(170, 249, 239);
     border-radius: 50%;
     border: 4px solid rgb(255, 251, 251);
-    outline:10px solid green;
+    outline:7px solid rgb(3, 95, 93);
     outline-offset:2px  ;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
