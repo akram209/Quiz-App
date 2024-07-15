@@ -228,6 +228,7 @@ function checkAnswer() {
             correctAnswer: quizObject.questions[questionindex].answers[quizObject.questions[questionindex].indexOfCorrectAnswer].text,
             answer: 'none'});
     }
+    // storing the wrong answers in local storage in json format
     localStorage.setItem('wrongAnswers', JSON.stringify(wrongAnswers));
 
    resetAnswers();
