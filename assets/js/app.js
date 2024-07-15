@@ -119,6 +119,7 @@ var quizObject = {
 var questionindex=0; // to keep track of the question index
 var width = 0; // to keep track of the progress
 var counter=0; // to keep track of the score
+var wrongAnswers = [];// to keep track of the wrong answers
 document.getElementById('question-content').innerHTML = quizObject.questions[questionindex].question; // set first question
 document.getElementById('counter').innerHTML = (questionindex+1) + "/" + quizObject.questions.length; // set counter
 // styling for the choosen option
@@ -175,23 +176,55 @@ function displayEndMessage() {
     reviewbtn.innerHTML = 'Review';
     
     contentDiv.appendChild(scoreMessage);
-    contentDiv.appendChild(reviewbtn);
+//     contentDiv.appendChild(reviewbtn);reviewbtn.onclick = function() {
+//         document.getElementsByTagName('img')[0].style.display = 'none';
+    
+//         // Create an iframe element
+//         var iframe = document.createElement('iframe');
+        
+//         // Set attributes for the iframe
+//         iframe.setAttribute('src', 'mistakes.html'); // Ensure the path is correct
+//         iframe.style.width = '100%'; // Set the desired width
+//         iframe.style.height = '400px'; // Set the desired height
+    
+//         // Insert the iframe into the 'score' element
+//         var score = document.getElementById('score');
+//         score.replaceChild(iframe, score.firstChild);
+// }
 }
 function checkAnswer() {
     var radios = document.getElementsByClassName('answer');
+    var answer = 0;
     for (var i = 0;  i <radios.length; i++) {
         if (radios[i].checked) {
             
             if (i=== quizObject.questions[questionindex].indexOfCorrectAnswer) {
                 counter++;
-                
+                 answer =1;
+                break;
+            }
+            else{
+                wrongAnswers.push({
+
+                    question: quizObject.questions[questionindex].question,
+                    index: questionindex,
+                    correctAnswer: quizObject.questions[questionindex].answers[quizObject.questions[questionindex].indexOfCorrectAnswer].text,
+                    answer: quizObject.questions[questionindex].answers[i].text});
+                    answer=1;
+                break;
             }
         }
-        else {
-            var wrongAnswers =[];
-            wrongAnswers.push(quizObject.questions[questionindex].answers[i].text);
-        }
+      
     }
+    if(answer==0){
+        wrongAnswers.push({
+            question: quizObject.questions[questionindex].question,
+            index: questionindex,
+            correctAnswer: quizObject.questions[questionindex].answers[quizObject.questions[questionindex].indexOfCorrectAnswer].text,
+            answer: 'none'});
+    }
+    localStorage.setItem('wrongAnswers', JSON.stringify(wrongAnswers));
+
    resetAnswers();
    resetStyle();
    if (questionindex == quizObject.questions.length-1) {
