@@ -176,7 +176,8 @@ function displayEndMessage() {
     reviewbtn.innerHTML = 'Review';
     
     contentDiv.appendChild(scoreMessage);
-//     contentDiv.appendChild(reviewbtn);reviewbtn.onclick = function() {
+    contentDiv.appendChild(reviewbtn);
+    //reviewbtn.onclick = function() {
 //         document.getElementsByTagName('img')[0].style.display = 'none';
     
 //         // Create an iframe element
