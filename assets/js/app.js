@@ -138,8 +138,8 @@ for (let j = 0; j < radios.length; j++) {
 function nextQuestion() {
 
    
-    if(questionindex==quizObject.questions.length-1){
-        return true;
+    if(questionindex>=quizObject.questions.length-1){
+        displayEndMessage();
     }
     else{ questionindex++;
         }
@@ -167,6 +167,7 @@ function resetStyle()
 
 function displayEndMessage() {
     var contentDiv = document.getElementsByClassName('content')[0];
+    console.log(contentDiv);
     contentDiv.innerHTML = '';
     var scoreMessage = document.createElement('p');
     scoreMessage.setAttribute('id', 'score');
@@ -228,9 +229,7 @@ function checkAnswer() {
 
    resetAnswers();
    resetStyle();
-   if (questionindex == quizObject.questions.length-1) {
-       displayEndMessage();
-    }
+   
     
 }
 
@@ -243,6 +242,7 @@ document.getElementById('next').onclick = function() {
     document.getElementById('question-content').innerHTML = quizObject.questions[questionindex].question;
     swapAnswer(questionindex);
     width=0;
+   
 
 }
 
@@ -275,10 +275,7 @@ function startLoading() {
                 swapAnswer(questionindex);
                 startLoading();
             }
-            if (questionindex == quizObject.questions.length) {
-                
-                alert("Your score is " + counter + " out of " + (questionindex));
-            }
+          
            
         } else {
             width++;
