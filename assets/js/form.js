@@ -7,8 +7,8 @@ function validateForm() {
    
     //inputs values
     var name = document.forms['myForm']['name'].value;
-var email = document.forms['myForm']['email'].value;
-var password = document.forms['myForm']['password'].value;
+let email = document.forms['myForm']['email'].value;
+let password = document.forms['myForm']['password'].value;
 var confirmPassword = document.forms['myForm']['confirmPassword'].value;
 
 
