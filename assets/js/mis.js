@@ -1,3 +1,4 @@
+ // get the wrong answers from local storage
 document.addEventListener('DOMContentLoaded', function() {
     var wrongAnswers = JSON.parse(localStorage.getItem('wrongAnswers')) || [];
 

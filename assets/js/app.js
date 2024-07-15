@@ -134,7 +134,7 @@ for (let j = 0; j < radios.length; j++) {
 
 
 
-
+// function to increase question index
 function nextQuestion() {
 
    
@@ -144,10 +144,11 @@ function nextQuestion() {
     else{ questionindex++;
         }
 }
-
+// function to display the previous question if needed
 function previousQuestion() {
     questionindex--;
 }
+// function to reset the answers
 function resetAnswers() {
     var radios = document.getElementsByClassName('answer');
     for (var i = 0, length = radios.length; i < length; i++) {
@@ -156,6 +157,7 @@ function resetAnswers() {
     }
     
 }
+// function to reset the style of the options
 function resetStyle()
 {
     var radios = document.getElementsByClassName('answer');
@@ -164,7 +166,7 @@ function resetStyle()
     }
   
 }
-
+// function to display the end message
 function displayEndMessage() {
     var contentDiv = document.getElementsByClassName('content')[0];
     console.log(contentDiv);
@@ -194,6 +196,7 @@ function displayEndMessage() {
 //         score.replaceChild(iframe, score.firstChild);
 // }
 }
+// function to check the answer
 function checkAnswer() {
     var radios = document.getElementsByClassName('answer');
     var answer = 0;
@@ -234,7 +237,7 @@ function checkAnswer() {
 }
 
 
-
+// function to display the next question
 
 document.getElementById('next').onclick = function() {
     checkAnswer();
@@ -245,7 +248,7 @@ document.getElementById('next').onclick = function() {
    
 
 }
-
+// function to swap the answers
 function swapAnswer(index) {
  
     for (var i=0; i<4; i++){
@@ -256,12 +259,12 @@ function swapAnswer(index) {
 for (var i=0; i<4; i++){
     document.getElementById('answer'+(i+1)).innerHTML = quizObject.questions[questionindex].answers[i].text;
 }
+// function to start loading and control the loading bar
 function startLoading() {
     let loadingBar = document.getElementById('bar');
 
      width = 0;
 
- 
     let interval = setInterval(function() {
 
         if (width >= 100) {

@@ -81,7 +81,7 @@ document.getElementById('confirmPasswordError').innerHTML = "";
     localStorage.setItem('password',password);
     localStorage.setItem('confirmPassword',confirmPassword);
   
-  
+  // animation for login form
   
     document.getElementsByTagName('h2')[0].textContent = "";
     document.getElementsByTagName('h2')[0].textContent = "login";
@@ -94,15 +94,19 @@ document.getElementById('confirmPasswordError').innerHTML = "";
     document.getElementById('myForm').style.height = "340px";
     document.getElementById('myForm').style.marginTop = "220px";
     document.forms['myForm']['email'].value='';
- document.forms['myForm']['password'].value='';
+    document.forms['myForm']['password'].value='';
+    // 
     var confirmPassword = document.forms['myForm']['submit'];
     confirmPassword.style.display = "none";
     var loginBtn = document.createElement('button');
     loginBtn.textContent = "ٍStart Quiz";
     loginBtn.id = "loginBtn";
     document.getElementById('myForm').appendChild(loginBtn);
+    // login button
     loginBtn.onclick = function(event) {
+        // prevent form from submitting not to recall validation function
         event.preventDefault();
+        // validate
         var email=localStorage.getItem('email');
 var password=localStorage.getItem('password');
 var passwordform=document.getElementById('password').value;
@@ -112,6 +116,7 @@ var emailform=document.getElementById('email').value;
         document.getElementById('emailError').innerHTML = "Email or Password is incorrect";
         return false;
     }
+    // finally redirect to another page
     else window.location.href = "app.html";
     }
 
@@ -192,7 +197,4 @@ document.getElementById('confirmPasswordIcon').onclick = function() {
 document.getElementById('submit').onclick = function() {
   
 }
-// document.getElementById('loginBtn').onclick = function() {
 
-    
-//}
