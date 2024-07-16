@@ -1,25 +1,36 @@
 body{
-    background-image: url(../images/back.jpg);
+    background: linear-gradient(to bottom, rgb(0 218 184), rgb(5, 142, 121) , rgb(30, 30, 30));
     background-repeat: no-repeat;
     background-size: cover;    
 }
 h1{
     text-align: center;
-    color: rgb(8, 82, 10);
+    color: rgb(2, 16, 3);
     font-size: 50px;
+    text-shadow: 2px 2px 5px rgb(57, 128, 62);
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 .wrong-answer {
     display: block;
+    font-size: 20px;
+    font-weight: 700;
     width: 50%;
     margin: auto;
     text-align: center;
-    border: 1px solid #ccc;
+    border: 2px solid #ba1c1c;
+    border-radius: 10px;
     padding: 10px;
     margin-bottom: 10px;
     background-color: #f8d7da;
+    box-shadow: 2px 2px 5px rgb(202, 121, 121);
 }
 .wrong-answer p {
     margin: 5px 0;
     
+}
+#correctAnswer {
+    color: green;
+}
+#wrongAnswer {
+    color: red;
 }

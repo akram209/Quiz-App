@@ -194,7 +194,7 @@ document.getElementById('confirmPasswordIcon').onclick = function() {
         document.getElementById('confirmPasswordIcon').setAttribute('class', "fa-regular fa-eye");
     }
 }
-document.getElementById('submit').onclick = function() {
+// document.getElementById('submit').onclick = function() {
   
-}
+// }
 

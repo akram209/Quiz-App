@@ -180,21 +180,9 @@ function displayEndMessage() {
     
     contentDiv.appendChild(scoreMessage);
     contentDiv.appendChild(reviewbtn);
-    //reviewbtn.onclick = function() {
-//         document.getElementsByTagName('img')[0].style.display = 'none';
-    
-//         // Create an iframe element
-//         var iframe = document.createElement('iframe');
-        
-//         // Set attributes for the iframe
-//         iframe.setAttribute('src', 'mistakes.html'); // Ensure the path is correct
-//         iframe.style.width = '100%'; // Set the desired width
-//         iframe.style.height = '400px'; // Set the desired height
-    
-//         // Insert the iframe into the 'score' element
-//         var score = document.getElementById('score');
-//         score.replaceChild(iframe, score.firstChild);
-// }
+    reviewbtn.onclick = function() {
+        window.location.href = 'mistakes.html';
+    }
 }
 // function to check the answer
 function checkAnswer() {

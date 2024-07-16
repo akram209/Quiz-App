@@ -1,5 +1,5 @@
  // get the wrong answers from local storage
-document.addEventListener('DOMContentLoaded', function() {
+
     var wrongAnswers = JSON.parse(localStorage.getItem('wrongAnswers')) || [];
 
     var container = document.getElementById('wrong-answers-container');
@@ -14,12 +14,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         var correctAnswerP = document.createElement('p');
         correctAnswerP.textContent = 'Correct Answer: ' + wrongAnswer.correctAnswer;
+        correctAnswerP.setAttribute('id', 'correctAnswer');
         div.appendChild(correctAnswerP);
 
         var yourAnswerP = document.createElement('p');
         yourAnswerP.textContent = 'Your Answer: ' + wrongAnswer.answer;
+        yourAnswerP.setAttribute('id', 'wrongAnswer');
         div.appendChild(yourAnswerP);
 
         container.appendChild(div);
     });
-});
