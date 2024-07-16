@@ -1,6 +1,6 @@
  // get the wrong answers from local storage
 
-    var wrongAnswers = JSON.parse(localStorage.getItem('wrongAnswers')) || [];
+    var wrongAnswers = JSON.parse(localStorage.getItem('wrongAnswers'));
 
     var container = document.getElementById('wrong-answers-container');
 
