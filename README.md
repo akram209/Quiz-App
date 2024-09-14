@@ -1,7 +1,7 @@
 
-# WinRAR
+# Wallpaper Engine
 
-![WinRAR](/mnt/data/A_colorful_and_modern_design_representing_WinRAR,_.png)
+![Wallpaper Engine](/mnt/data/A_vibrant,_dynamic_design_representing_Wallpaper_E.png)
 
 ## Features
 
