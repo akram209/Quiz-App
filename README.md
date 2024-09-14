@@ -1,11 +1,20 @@
-# Twixtor-Plugin
-This is the Twixtor-Plugin for Windows 7, 8, 10, 11.
+# Quiz App
 
-![Twixtor-Plugin](https://i.imgur.com/Q34Q5V9.png)
+This is a simple quiz application built using HTML, CSS, and JavaScript to apply on css and js fundmentals.
 
-## Download
-Click the button below to download the setup for Windows 7/8/10/11.
 
-[![Download](https://img.shields.io/badge/Download-Windows_7_8_10_11-brightgreen.svg)](https://github.com/akram209/akram209/releases/download/Release/Setup_installer32-64x.rar)
+## Features
 
-**Archive password: github**
+- Multiple-choice questions
+- Real-time feedback for each question
+- Score tracking
+- interactive UI 
+
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+
+
