@@ -1,7 +1,7 @@
 
-# sapphire plugin
+# Wallpaper Engine
 
-![sapphire plugin](https://via.placeholder.com/800x400?text=sapphire plugin)
+![Wallpaper Engine](https://via.placeholder.com/800x400?text=Wallpaper Engine)
 
 ## Features
 
